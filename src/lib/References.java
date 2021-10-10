@@ -2,11 +2,6 @@ package lib;
 
 public class References
 {
-	public static final String API_KEY			   = "da148b1aa04d42d5b4b42e043c581a9d";
-	public static final String OAUTH_CLIENT_ID	   = "37599";
-	public static final String OAUTH_CLIENT_SECRET = "jt6JZmDPvKbXhF-nNS2mozm8ufDE6g8tAag8rLZEvdk";
-	public static final String OAUTH_URL		   = "https://www.bungie.net/en/OAuth/Authorize?client_id=37599&response_type=code";
-
 	public static final String VENDOR_ZAVALA	   = "69482069";
 	public static final String VENDOR_SHAXX		   = "3603221665";
 	public static final String VENDOR_DRIFTER	   = "248695599";

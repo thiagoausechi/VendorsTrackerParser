@@ -1,8 +1,8 @@
 package init;
 
-import static lib.References.API_KEY;
-import static lib.References.OAUTH_CLIENT_ID;
-import static lib.References.OAUTH_CLIENT_SECRET;
+import static lib.SecretReferences.API_KEY;
+import static lib.SecretReferences.OAUTH_CLIENT_ID;
+import static lib.SecretReferences.OAUTH_CLIENT_SECRET;
 
 import java.io.File;
 import java.nio.file.Paths;

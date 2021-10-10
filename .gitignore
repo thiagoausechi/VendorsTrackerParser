@@ -1,0 +1,3 @@
+/bin/
+/database/cached/oauth.json
+/src/lib/SecretReferences.java
