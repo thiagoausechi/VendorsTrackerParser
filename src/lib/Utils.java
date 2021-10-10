@@ -132,10 +132,18 @@ public class Utils
 
 	public static boolean isXurActive()
 	{
-		return getXurLocation() != null;
+		return getXurApiData() != null;
 	}
 
-	public static JsonObject getXurLocation()
+	public static String getXurLocation(boolean isInitials)
+	{
+		if (isInitials)
+			return XUR_LOCATION.get("location").getAsString();
+		else
+			return "%s, in %s".formatted(XUR_LOCATION.get("bubbleName").getAsString(), XUR_LOCATION.get("destinationName").getAsString());
+	}
+
+	public static JsonObject getXurApiData()
 	{
 		JsonObject result = null;
 

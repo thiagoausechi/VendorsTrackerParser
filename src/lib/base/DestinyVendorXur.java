@@ -19,7 +19,8 @@ public class DestinyVendorXur extends DestinyVendor
 		super(name, hash);
 
 		this.exotics = new HashMap<>();
-		this.setLocation(Utils.XUR_LOCATION.get("locationName").getAsString());
+		this.properties.put("location_initials", Utils.getXurLocation(true));
+		this.setLocation(Utils.getXurLocation(false));
 	}
 
 	public DestinyItemArmor getExoticSale(Guardian guardian)
