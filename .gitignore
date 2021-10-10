@@ -1,7 +1,3 @@
 /bin/
-/database/cached/oauth.json
-/src/lib/SecretReferences.java
-bin/db/Database.class
-database/cached/oauth.json
-database/cached/oauth.json
+src/lib/SecretReferences.java
 database/cached/oauth.json
