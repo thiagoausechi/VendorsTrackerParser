@@ -117,7 +117,7 @@ public class Utils
 	public static void saveTimeElapsed(Instant start, Instant finish)
 	{
 		Logger.logFormatted("Everything done in %s minutes and %s seconds.", Duration.between(start, finish).toMinutesPart(), Duration.between(start, finish).toSecondsPart());
-
+		
 		// TODO implements a way to save this into file
 		// Format: dd/mm/aaaa HHhMM - MMm SSs
 	}

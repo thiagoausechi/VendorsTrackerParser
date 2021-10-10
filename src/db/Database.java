@@ -1,8 +1,11 @@
 package db;
 
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -86,7 +89,8 @@ public class Database
 
 		result.add("vendors", vendors_array);
 
-		try (FileWriter fileWriter = new FileWriter(file.getAbsolutePath()))
+		// new FileWriter(file.getAbsolutePath())
+		try (Writer fileWriter = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8))
 		{
 			fileWriter.write(vendors_array.toString());
 			fileWriter.flush();
