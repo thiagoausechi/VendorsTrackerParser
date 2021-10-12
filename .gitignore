@@ -1,4 +1,4 @@
-/bin/
+bin/
 src/lib/SecretReferences.java
 database/cached/oauth.json
 database/cached/oauth.json
