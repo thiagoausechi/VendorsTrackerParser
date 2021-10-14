@@ -160,7 +160,7 @@ public class DestinyItemArmor extends DestinyItem implements JSONFactory
 	public JsonArray getStatusForExport()
 	{
 		JsonArray	 result	= new JsonArray();
-		JsonObject[] status	= new JsonObject[] { getStatusForExport("Mobility") ,getStatusForExport("Resilience") ,
+		JsonObject[] status	= new JsonObject[] {getStatusForExport("Mobility") ,getStatusForExport("Resilience") ,
 			getStatusForExport("Recovery") ,getStatusForExport("Discipline") ,getStatusForExport("Intellect") ,
 			getStatusForExport("Strength") , };
 
