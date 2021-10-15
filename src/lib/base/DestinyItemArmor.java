@@ -1,23 +1,26 @@
 package lib.base;
 
+import java.util.HashMap;
+
+import org.apache.maven.shared.utils.StringUtils;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import lib.JSONFactory;
-import lib.References;
 import material.inventory.DestinyItem;
 
 public class DestinyItemArmor extends DestinyItem implements JSONFactory
 {
-	String	  seasonWatermark;
-	ArmorType type;
-	int		  mobility, resilience, recovery, discipline, intellect, strenght;
-	// TODO Make this HashMap!
+	String									seasonWatermark;
+	ArmorType								type;
+	protected HashMap<ArmorStatus, Integer>	status;
 
 	public DestinyItemArmor(String hashID, ArmorType type)
 	{
 		super(hashID);
 		this.type = type;
+		status = new HashMap<ArmorStatus, Integer>();
 	}
 
 	public String getSeasonWatermark()
@@ -47,85 +50,83 @@ public class DestinyItemArmor extends DestinyItem implements JSONFactory
 			return false;
 		else
 		{
-			int	m = getStatus(References.MOBILITY, stats_list);
-			int	r = getStatus(References.RESILIENCE, stats_list);
-			int	e = getStatus(References.RECOVERY, stats_list);
-			int	d = getStatus(References.DISCIPLINE, stats_list);
-			int	i = getStatus(References.INTELLECT, stats_list);
-			int	s = getStatus(References.STRENGHT, stats_list);
-			setStatus(m, r, e, d, i, s);
+			for (ArmorStatus atribute : ArmorStatus.values())
+				status.put(atribute, getStatus(atribute, stats_list));
 			return true;
 		}
 	}
 
-	public int getStatus(String atribute, JsonObject stats_list)
+	public int getStatus(ArmorStatus atribute, JsonObject stats_list)
 	{
-		return stats_list.getAsJsonObject(atribute).get("value").getAsInt();
+		return stats_list.getAsJsonObject(atribute.hash()).get("value").getAsInt();
 	}
 
 	public int getTotalStatus()
 	{
-		return mobility + resilience + recovery + discipline + intellect + strenght;
+		int total = 0;
+		for (ArmorStatus atribute : status.keySet())
+			total += status.get(atribute);
+		return total;
 	}
 
 	public int getMobility()
 	{
-		return mobility;
+		return this.status.get(ArmorStatus.MOBILITY);
 	}
 
-	public void setMobility(int mobility)
+	public void setMobility(int value)
 	{
-		this.mobility = mobility;
+		this.status.put(ArmorStatus.MOBILITY, value);
 	}
 
 	public int getResilience()
 	{
-		return resilience;
+		return this.status.get(ArmorStatus.RESILIENCE);
 	}
 
-	public void setResilience(int resilience)
+	public void setResilience(int value)
 	{
-		this.resilience = resilience;
+		this.status.put(ArmorStatus.RESILIENCE, value);
 	}
 
 	public int getRecovery()
 	{
-		return recovery;
+		return this.status.get(ArmorStatus.RECOVERY);
 	}
 
-	public void setRecovery(int recovery)
+	public void setRecovery(int value)
 	{
-		this.recovery = recovery;
+		this.status.put(ArmorStatus.RECOVERY, value);
 	}
 
 	public int getDiscipline()
 	{
-		return discipline;
+		return this.status.get(ArmorStatus.DISCIPLINE);
 	}
 
-	public void setDiscipline(int discipline)
+	public void setDiscipline(int value)
 	{
-		this.discipline = discipline;
+		this.status.put(ArmorStatus.DISCIPLINE, value);
 	}
 
 	public int getIntellect()
 	{
-		return intellect;
+		return this.status.get(ArmorStatus.INTELLECT);
 	}
 
-	public void setIntellect(int intellect)
+	public void setIntellect(int value)
 	{
-		this.intellect = intellect;
+		this.status.put(ArmorStatus.INTELLECT, value);
 	}
 
 	public int getStrenght()
 	{
-		return strenght;
+		return this.status.get(ArmorStatus.STRENGHT);
 	}
 
-	public void setStrenght(int strenght)
+	public void setStrenght(int value)
 	{
-		this.strenght = strenght;
+		this.status.put(ArmorStatus.STRENGHT, value);
 	}
 
 	public ArmorType getType()
@@ -136,6 +137,30 @@ public class DestinyItemArmor extends DestinyItem implements JSONFactory
 	public enum ArmorType
 	{
 		HELMET, GAUNTLETS, CHEST, LEG
+	}
+
+	// ========================================================================================================================================================================================
+	public enum ArmorStatus
+	{
+		MOBILITY("2996146975"), RESILIENCE("392767087"), RECOVERY("1943323491"), DISCIPLINE("1735777505"), INTELLECT("144602215"), STRENGHT("4244567218");
+
+		// TODO Fix formatter
+		private String hash;
+
+		ArmorStatus(String hash)
+		{
+			this.hash = hash;
+		}
+
+		public String hash()
+		{
+			return this.hash;
+		}
+
+		public String getName()
+		{
+			return StringUtils.capitalise(this.name().toLowerCase());
+		}
 	}
 
 	public static String[] getValiableArmorSlot()
@@ -159,57 +184,22 @@ public class DestinyItemArmor extends DestinyItem implements JSONFactory
 
 	public JsonArray getStatusForExport()
 	{
-		JsonArray	 result	= new JsonArray();
-		JsonObject[] status	= new JsonObject[] {getStatusForExport("Mobility") ,getStatusForExport("Resilience") ,
-			getStatusForExport("Recovery") ,getStatusForExport("Discipline") ,getStatusForExport("Intellect") ,
-			getStatusForExport("Strength") , };
+		JsonArray result = new JsonArray();
 
-		for (JsonObject stats : status)
-			result.add(stats);
+		for (ArmorStatus atribute : status.keySet())
+			result.add(getStatusForExport(atribute));
 
 		return result;
 	}
 
-	public JsonObject getStatusForExport(String name)
+	public JsonObject getStatusForExport(ArmorStatus atribute)
 	{
 		JsonObject result = new JsonObject();
 
-		switch (name) // TODO Improve for some loop?
-		{
-			case "Mobility": {
-				result.addProperty("name", "Mobility");
-				result.addProperty("value", mobility);
-				return result;
-			}
-			case "Resilience": {
-				result.addProperty("name", "Resilience");
-				result.addProperty("value", resilience);
-				return result;
-			}
-			case "Recovery": {
-				result.addProperty("name", "Recovery");
-				result.addProperty("value", recovery);
-				return result;
+		result.addProperty("name", atribute.getName());
+		result.addProperty("value", status.get(atribute));
 
-			}
-			case "Discipline": {
-				result.addProperty("name", "Discipline");
-				result.addProperty("value", discipline);
-				return result;
-			}
-			case "Intellect": {
-				result.addProperty("name", "Intellect");
-				result.addProperty("value", intellect);
-				return result;
-			}
-			case "Strength": {
-				result.addProperty("name", "Strength");
-				result.addProperty("value", strenght);
-				return result;
-			}
-		}
-
-		return null;
+		return result;
 	}
 
 	@Override

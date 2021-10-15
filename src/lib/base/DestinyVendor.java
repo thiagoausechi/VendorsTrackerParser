@@ -14,10 +14,10 @@ import material.DestinyAPI;
 
 public class DestinyVendor implements JSONFactory
 {
-	protected HashMap<String, String>		  properties;
+	protected HashMap<String, String>		properties;
 	// hash, name, location, color, icon, large_icon, map_icon
 
-	protected HashMap<Guardian, VendorSale> sales;
+	protected HashMap<Guardian, VendorSale>	sales;
 
 	public DestinyVendor(String name, String hash)
 	{
