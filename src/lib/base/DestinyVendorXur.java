@@ -2,8 +2,6 @@ package lib.base;
 
 import java.util.HashMap;
 
-import org.apache.maven.shared.utils.StringUtils;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -48,8 +46,8 @@ public class DestinyVendorXur extends DestinyVendor
 		{
 			JsonObject guardian_jo = new JsonObject();
 
-			guardian_jo.addProperty("name", StringUtils.capitalise(guardian.name().toLowerCase()));
-			guardian_jo.add("sales", exotics.get(guardian).export());
+			guardian_jo.addProperty("name", guardian.getName());
+			guardian_jo.add("exotic", exotics.get(guardian).export());
 			guardian_jo.add("sales", sales.get(guardian).export());
 
 			guardians.add(guardian_jo);
