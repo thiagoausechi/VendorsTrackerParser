@@ -1,5 +1,7 @@
 package lib;
 
+import org.apache.maven.shared.utils.StringUtils;
+
 public class References
 {
 	public static final String VENDOR_ZAVALA   = "69482069";
@@ -12,6 +14,11 @@ public class References
 
 	public static enum Guardian
 	{
-		WARLOCK, HUNTER, TITAN
+		WARLOCK, HUNTER, TITAN;
+		
+		public String getName() 
+		{
+			return StringUtils.capitalise(name().toLowerCase());
+		}
 	}
 }
