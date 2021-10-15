@@ -82,40 +82,6 @@
                     },
                     {
                         "item": {
-                            "hash": "241462142",
-                            "name": "Synthoceps",
-                            "icon": "https://www.bungie.net/common/destiny2_content/icons/21d1f1aaf807996e1cfff5fc283fb59e.jpg",
-                            "watermark": "https://www.bungie.net/common/destiny2_content/icons/0dac2f181f0245cfc64494eccb7db9f7.png"
-                        },
-                        "status": [
-                            {
-                                "name": "Strenght",
-                                "value": 12
-                            },
-                            {
-                                "name": "Mobility",
-                                "value": 17
-                            },
-                            {
-                                "name": "Recovery",
-                                "value": 10
-                            },
-                            {
-                                "name": "Discipline",
-                                "value": 12
-                            },
-                            {
-                                "name": "Resilience",
-                                "value": 3
-                            },
-                            {
-                                "name": "Intellect",
-                                "value": 9
-                            }
-                        ]
-                    },
-                    {
-                        "item": {
                             "hash": "2913217908",
                             "name": "Woven Firesmith Grips",
                             "icon": "https://www.bungie.net/common/destiny2_content/icons/38cd00ef05d08c197762e7ad417b8341.jpg",
@@ -175,40 +141,6 @@
                             {
                                 "name": "Resilience",
                                 "value": 11
-                            },
-                            {
-                                "name": "Intellect",
-                                "value": 7
-                            }
-                        ]
-                    },
-                    {
-                        "item": {
-                            "hash": "138282166",
-                            "name": "Transversive Steps",
-                            "icon": "https://www.bungie.net/common/destiny2_content/icons/78874c268891725a68bdcc35432fec9e.jpg",
-                            "watermark": "https://www.bungie.net/common/destiny2_content/icons/0dac2f181f0245cfc64494eccb7db9f7.png"
-                        },
-                        "status": [
-                            {
-                                "name": "Strenght",
-                                "value": 6
-                            },
-                            {
-                                "name": "Mobility",
-                                "value": 17
-                            },
-                            {
-                                "name": "Recovery",
-                                "value": 3
-                            },
-                            {
-                                "name": "Discipline",
-                                "value": 16
-                            },
-                            {
-                                "name": "Resilience",
-                                "value": 12
                             },
                             {
                                 "name": "Intellect",
@@ -393,74 +325,6 @@
                     },
                     {
                         "item": {
-                            "hash": "193869520",
-                            "name": "St0mp-EE5",
-                            "icon": "https://www.bungie.net/common/destiny2_content/icons/8c7681f1e93ee996a724e55554e079e9.jpg",
-                            "watermark": "https://www.bungie.net/common/destiny2_content/icons/0dac2f181f0245cfc64494eccb7db9f7.png"
-                        },
-                        "status": [
-                            {
-                                "name": "Strenght",
-                                "value": 7
-                            },
-                            {
-                                "name": "Mobility",
-                                "value": 8
-                            },
-                            {
-                                "name": "Recovery",
-                                "value": 2
-                            },
-                            {
-                                "name": "Discipline",
-                                "value": 9
-                            },
-                            {
-                                "name": "Resilience",
-                                "value": 24
-                            },
-                            {
-                                "name": "Intellect",
-                                "value": 15
-                            }
-                        ]
-                    },
-                    {
-                        "item": {
-                            "hash": "138282166",
-                            "name": "Transversive Steps",
-                            "icon": "https://www.bungie.net/common/destiny2_content/icons/78874c268891725a68bdcc35432fec9e.jpg",
-                            "watermark": "https://www.bungie.net/common/destiny2_content/icons/0dac2f181f0245cfc64494eccb7db9f7.png"
-                        },
-                        "status": [
-                            {
-                                "name": "Strenght",
-                                "value": 6
-                            },
-                            {
-                                "name": "Mobility",
-                                "value": 17
-                            },
-                            {
-                                "name": "Recovery",
-                                "value": 3
-                            },
-                            {
-                                "name": "Discipline",
-                                "value": 16
-                            },
-                            {
-                                "name": "Resilience",
-                                "value": 12
-                            },
-                            {
-                                "name": "Intellect",
-                                "value": 7
-                            }
-                        ]
-                    },
-                    {
-                        "item": {
                             "hash": "607969640",
                             "name": "Forged Machinist Greaves",
                             "icon": "https://www.bungie.net/common/destiny2_content/icons/0de699154c51adbf2a62bd3dadf7c833.jpg",
@@ -568,40 +432,6 @@
                     },
                     {
                         "item": {
-                            "hash": "241462142",
-                            "name": "Synthoceps",
-                            "icon": "https://www.bungie.net/common/destiny2_content/icons/21d1f1aaf807996e1cfff5fc283fb59e.jpg",
-                            "watermark": "https://www.bungie.net/common/destiny2_content/icons/0dac2f181f0245cfc64494eccb7db9f7.png"
-                        },
-                        "status": [
-                            {
-                                "name": "Strenght",
-                                "value": 12
-                            },
-                            {
-                                "name": "Mobility",
-                                "value": 17
-                            },
-                            {
-                                "name": "Recovery",
-                                "value": 10
-                            },
-                            {
-                                "name": "Discipline",
-                                "value": 12
-                            },
-                            {
-                                "name": "Resilience",
-                                "value": 3
-                            },
-                            {
-                                "name": "Intellect",
-                                "value": 9
-                            }
-                        ]
-                    },
-                    {
-                        "item": {
                             "hash": "2615721245",
                             "name": "Annealed Shaper Gloves",
                             "icon": "https://www.bungie.net/common/destiny2_content/icons/9c2299b218e970c32eec0de360491385.jpg",
@@ -665,40 +495,6 @@
                             {
                                 "name": "Intellect",
                                 "value": 19
-                            }
-                        ]
-                    },
-                    {
-                        "item": {
-                            "hash": "193869520",
-                            "name": "St0mp-EE5",
-                            "icon": "https://www.bungie.net/common/destiny2_content/icons/8c7681f1e93ee996a724e55554e079e9.jpg",
-                            "watermark": "https://www.bungie.net/common/destiny2_content/icons/0dac2f181f0245cfc64494eccb7db9f7.png"
-                        },
-                        "status": [
-                            {
-                                "name": "Strenght",
-                                "value": 7
-                            },
-                            {
-                                "name": "Mobility",
-                                "value": 8
-                            },
-                            {
-                                "name": "Recovery",
-                                "value": 2
-                            },
-                            {
-                                "name": "Discipline",
-                                "value": 9
-                            },
-                            {
-                                "name": "Resilience",
-                                "value": 24
-                            },
-                            {
-                                "name": "Intellect",
-                                "value": 15
                             }
                         ]
                     },

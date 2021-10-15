@@ -29,10 +29,10 @@ public class CacheManager
 		for (int i = 0; i < all_vendors_raw.length; i++)
 		{ // Class loop
 			JsonObject class_vendors_raw = all_vendors_raw[i];
-			Guardian guardian = Guardian.values()[i];
-			
+			Guardian   guardian			 = Guardian.values()[i];
+
 			Logger.logTittle("Getting vendors for character: " + guardian, false, false);
-			
+
 			for (String vendor_hash : class_vendors_raw.getAsJsonObject("sales").keySet())
 			{ // Vendors loop if
 
@@ -57,15 +57,16 @@ public class CacheManager
 						{
 							ArmorType		 armor_type	 = DestinyItemArmor.getArmorType(Utils.getItemType(item_hash));
 							DestinyItemArmor armor_piece = new DestinyItemArmor(item_hash, armor_type);
-							
+
 							Logger.logFormatted("%s (%s)", armor_piece.getName(), item_hash);
 							armor_piece.setSeasonWatermark(Utils.getItemSeasonalWatermaerk(item_hash));
-							
+
 							Utils.parseArmorStatus(class_vendors_raw, vendor_hash, sale_slot, armor_piece);
 
-							if (xur != null && flags[1] && (Utils.getArmorClassType(item_hash) == guardian.getClassType()))
+							if (xur != null && flags[1]
+								&& (Utils.getArmorClassType(item_hash) == guardian.getClassType()))
 								xur.setExoticSale(guardian, armor_piece);
-							else
+							else if (!flags[1])
 								vendor.addSale(guardian, armor_piece);
 						}
 					}
