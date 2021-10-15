@@ -14,11 +14,16 @@ public class References
 
 	public static enum Guardian
 	{
-		WARLOCK, HUNTER, TITAN;
-		
-		public String getName() 
+		TITAN, HUNTER, WARLOCK;
+
+		public String getName()
 		{
 			return StringUtils.capitalise(name().toLowerCase());
+		}
+
+		public int getClassType()
+		{
+			return ordinal();
 		}
 	}
 }

@@ -81,6 +81,11 @@ public class Utils
 	{
 		return D2VT.db.manifest.getDefinitionLibrary(ManifestEntityTypes.INVENTORYITEM).getAsJsonObject(item_hash).getAsJsonObject("inventory").get("tierTypeName").getAsString();
 	}
+	
+	public static int getArmorClassType(String item_hash)
+	{
+		return D2VT.db.manifest.getDefinitionLibrary(ManifestEntityTypes.INVENTORYITEM).getAsJsonObject(item_hash).get("classType").getAsInt();
+	}
 
 	public static String getItemSeasonalWatermaerk(String item_hash)
 	{

@@ -28,9 +28,11 @@ public class CacheManager
 
 		for (int i = 0; i < all_vendors_raw.length; i++)
 		{ // Class loop
-			Logger.logTittle("Getting vendors for character: " + Guardian.values()[i], false, false);
 			JsonObject class_vendors_raw = all_vendors_raw[i];
-
+			Guardian guardian = Guardian.values()[i];
+			
+			Logger.logTittle("Getting vendors for character: " + guardian, false, false);
+			
 			for (String vendor_hash : class_vendors_raw.getAsJsonObject("sales").keySet())
 			{ // Vendors loop if
 
@@ -61,10 +63,10 @@ public class CacheManager
 							
 							Utils.parseArmorStatus(class_vendors_raw, vendor_hash, sale_slot, armor_piece);
 
-							if (xur != null && flags[1])
-								xur.setExoticSale(Guardian.values()[i], armor_piece);
+							if (xur != null && flags[1] && (Utils.getArmorClassType(item_hash) == guardian.getClassType()))
+								xur.setExoticSale(guardian, armor_piece);
 							else
-								vendor.addSale(Guardian.values()[i], armor_piece);
+								vendor.addSale(guardian, armor_piece);
 						}
 					}
 				}

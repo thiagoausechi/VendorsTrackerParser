@@ -5,6 +5,7 @@ import java.util.HashMap;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import lib.Logger;
 import lib.References.Guardian;
 import lib.Utils;
 
@@ -28,7 +29,8 @@ public class DestinyVendorXur extends DestinyVendor
 
 	public DestinyVendor setExoticSale(Guardian guardian, DestinyItemArmor exotic)
 	{
-		this.exotics.putIfAbsent(guardian, exotic);
+		Logger.logFormatted("Setting exotic armor (%s) for %s", exotic.getName(), guardian.getName());
+		this.exotics.put(guardian, exotic);
 		return this;
 	}
 
