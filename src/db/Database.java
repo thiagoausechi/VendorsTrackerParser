@@ -39,13 +39,13 @@ public class Database
 		Logger.logStart("Database");
 
 		if (Utils.isXurActive())
-			vendors.add(new DestinyVendorXur("Xûr", "2190858386").setColor("rgba(100, 107, 112, 0.23)"));
-		vendors.add(new DestinyVendor("Zavala", "69482069").setLocation("Courtyard, in Tower").setColor("rgba(33, 115, 168, 0.23)"));
+			vendors.add(new DestinyVendorXur("Xûr", "2190858386").setColor("rgb(79, 87, 92, 0.40)"));
+		vendors.add(new DestinyVendor("Zavala", "69482069").setLocation("Courtyard, in Tower").setColor("rgb(4, 29, 44, 0.59)"));
 		vendors.add(new DestinyVendor("Lord Shaxx", "3603221665").setLocation("Courtyard, in Tower").setColor("rgba(217, 35, 41, 0.23)"));
-		vendors.add(new DestinyVendor("Drifter", "248695599").setLocation("Bazaar, in Tower").setColor("rgba(58, 157, 143, 0.23)"));
-		vendors.add(new DestinyVendor("Ada-1", "350061650").setLocation("Bazaar, in Tower").setColor("rgba(0, 0, 0, 0.4)"));
-		vendors.add(new DestinyVendor("Devrim", "396892126").setLocation("Trostland, in European Dead Zone").setColor("rgba(64, 59, 56, 0.23)"));
-		vendors.add(new DestinyVendor("Failsafe", "1576276905").setLocation("Exodus Black, in Nessus").setColor("rgba(136, 67, 57, 0.23)"));
+		vendors.add(new DestinyVendor("Drifter", "248695599").setLocation("Bazaar, in Tower").setColor("rgb(36, 62, 58, 0.67)"));
+		vendors.add(new DestinyVendor("Ada-1", "350061650").setLocation("Bazaar, in Tower").setColor("rgb(18, 14, 14, 0.54)"));
+		vendors.add(new DestinyVendor("Devrim Kay", "396892126").setLocation("Trostland, in European Dead Zone").setColor("rgb(70, 58, 51, 0.46)"));
+		vendors.add(new DestinyVendor("Failsafe", "1576276905").setLocation("Exodus Black, in Nessus").setColor("rgb(126, 62, 53, 0.43)"));
 
 		for (DestinyVendor vendor : vendors)
 			vendors_map.put(vendor.getHash(), vendor);
