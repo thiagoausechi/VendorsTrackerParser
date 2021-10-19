@@ -7,7 +7,6 @@ import com.google.gson.JsonObject;
 
 import lib.JSONFactory;
 import lib.References.Guardian;
-import lib.base.DestinyItemArmor.ArmorType;
 import material.DestinyAPI;
 
 public class DestinyVendor implements JSONFactory
@@ -72,11 +71,6 @@ public class DestinyVendor implements JSONFactory
 	public String getIcon(String type)
 	{
 		return this.properties.get(type);
-	}
-
-	public DestinyItemArmor getSale(Guardian guardian, ArmorType type)
-	{
-		return getSales(guardian).getItems().get(type.ordinal());
 	}
 
 	public VendorSale getSales(Guardian guardian)
