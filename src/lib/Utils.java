@@ -39,7 +39,7 @@ public class Utils
 
 		String url = "https://www.bungie.net/Platform/Destiny2/%s/Profile/%s/Character/%s/Vendors/?components=402,304";
 		url = url.formatted(user.getMembershipType(), user.getBungieMembershipID(), user.getCharacters().get(guardian.ordinal()).getCharacterID());
-
+		
 		JsonObject response	= DestinyAPI.getHttpUtils().urlRequestGETOauth(url).getAsJsonObject("Response");
 		JsonObject sales_jo	= response.getAsJsonObject("sales").getAsJsonObject("data");
 		JsonObject stats_jo	= response.getAsJsonObject("itemComponents");
